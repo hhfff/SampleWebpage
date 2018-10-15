@@ -12,7 +12,7 @@ pipeline {
       }
     }
     stage('Deploy') {
-      agent{ dockerfile true }
+      agent any
       steps {
         echo 'start deploy'
       }
