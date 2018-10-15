@@ -22,7 +22,7 @@ pipeline {
       }
       steps {
         echo 'start deploy'
-        sh '''ls
+        sh '''ls -a
 cp -r /statichtml/* /usr/share/nginx/html
 cd /usr/share/nginx/html
 ls
