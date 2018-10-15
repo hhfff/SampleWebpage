@@ -23,7 +23,8 @@ pipeline {
       steps {
         echo 'start deploy'
         sh '''ls 
-cd /usr/share/nginx/html'''
+cd /usr/share/nginx/html
+ls'''
       }
     }
   }
