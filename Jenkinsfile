@@ -16,7 +16,7 @@ pipeline {
       steps {
         script {
           docker.build("my-image:${env.BUILD_ID}")
-          docker.image("my-image:${env.BUILD_ID}").run('-p 8000:80') {}
+          docker.image("my-image:${env.BUILD_ID}").withRun('-p 8000:80') {}
         }
 
       }
