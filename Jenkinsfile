@@ -12,13 +12,13 @@ pipeline {
       }
     }
     stage('Deploy') {
-      agent {
-        dockerfile true
-      }
+      agent any
       steps {
-        echo 'start deploy'
-        sh '''docker build -t webpage .
-docker run -d -p 8000:80 webpage'''
+        script {
+          docker.build("my-image:${env.BUILD_ID}")
+          docker.image("my-image:${env.BUILD_ID}").withRun('-p 8000:80') {}
+        }
+
       }
     }
   }
