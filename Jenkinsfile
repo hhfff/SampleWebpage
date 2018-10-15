@@ -22,12 +22,22 @@ pipeline {
       }
       steps {
         echo 'start deploy'
-        sh '''ls -a
-cd statichtml
-ls -a
-cp * /usr/share/nginx/html
+        sh '''docker build -t webpage .
 
-curl http://localhost:80/index.html'''
+
+
+
+
+
+
+
+
+
+
+
+
+
+docker run -d -p 8000:80 webpage'''
       }
     }
   }
