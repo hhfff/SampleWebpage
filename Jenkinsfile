@@ -24,7 +24,7 @@ pipeline {
         echo 'start deploy'
         sh '''ls 
 cd /usr/share/nginx/html
-ls'''
+cat index.html'''
       }
     }
   }
