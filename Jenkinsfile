@@ -12,7 +12,14 @@ pipeline {
       }
     }
     stage('Deploy') {
-      agent any
+      agent {
+        docker {
+          image 'nginx'
+          args '''-p 8181:80
+'''
+        }
+
+      }
       steps {
         echo 'start deploy'
       }
