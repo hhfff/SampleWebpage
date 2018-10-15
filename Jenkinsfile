@@ -13,30 +13,11 @@ pipeline {
     }
     stage('Deploy') {
       agent {
-        docker {
-          image 'nginx'
-          args '''-p 8181:80
-'''
-        }
-
+        dockerfile true
       }
       steps {
         echo 'start deploy'
         sh '''docker build -t webpage .
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 docker run -d -p 8000:80 webpage'''
       }
     }
