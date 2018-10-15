@@ -1,11 +1,9 @@
 pipeline {
-  agent any
+  agent none
   stages {
     stage('Build') {
       steps {
         echo 'start build'
-        sh '''git clone https://github.com/hhfff/SampleWebpage
-ls '''
       }
     }
     stage('Test') {
