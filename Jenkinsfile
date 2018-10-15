@@ -15,8 +15,8 @@ pipeline {
       agent any
       steps {
         script {
-          docker.build("my-image:${env.BUILD_ID}")
-          docker.image("my-image:${env.BUILD_ID}").run('-p 8000:80') {}
+          image=docker.build("my-image:${env.BUILD_ID}")
+          image.run('-p 8000:80') {}
         }
 
       }
