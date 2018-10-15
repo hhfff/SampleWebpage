@@ -16,9 +16,9 @@ pipeline {
       steps {
         script {
           image=docker.build("my-image:${env.BUILD_ID}")
-          image.run() {}
         }
 
+        sh "docker run -d -p 8000:80 my-image:${env.BUILD_ID}"
       }
     }
   }
