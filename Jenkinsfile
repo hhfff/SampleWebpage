@@ -25,10 +25,9 @@ pipeline {
         sh '''ls -a
 cd statichtml
 ls -a
-cp -r /statichtml/* /usr/share/nginx/html
-cd /usr/share/nginx/html
-ls
-cat index.html'''
+cp * /usr/share/nginx/html
+
+curl http://localhost:80/index.html'''
       }
     }
   }
